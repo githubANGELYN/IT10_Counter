@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+</head>
+<body>
+    <h1 id="quote-text">Sample Quote</h1>
+    <p id="author">Author's Name</p>
+    <button id="generate-btn">Generate Quote</button>
+
+    <script>
+        const quotes = [
+            {
+                quote: "The unexamined life is not worth living",
+                author: "Socrates"
+            },
+            {
+                quote: "Whereof one cannot speak, thereof one must be silent",
+                author: "Ludwig Wittgenstein"
+            },
+            {
+                quote: "Entities should not be multiplied unnecessarily",
+                author: "William of Ockham"
+            },
+            {
+                quote: "The life of man (in a state of nature) is solitary, poor, nasty, brutish, and short",
+                author: "Thomas Hobbes"
+            },
+            {
+                quote: "The greatest happiness of the greatest number is the foundation of morals and legislation",
+                author: "Jeremy Bentham"
+            }
+            
+        ];
+
+        function generateRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            document.getElementById('quote-text').textContent = randomQuote.quote;
+            document.getElementById('author').textContent = randomQuote.author;
+        }
+
+        document.getElementById('generate-btn').addEventListener('click', generateRandomQuote);
+
+        generateRandomQuote();
+    </script>
+</body>
+</html>

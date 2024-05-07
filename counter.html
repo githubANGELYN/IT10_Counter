@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is a counter</title>
+</head>
+
+<style>
+    #txt-count{
+        font-size: 100px;
+        color: blue
+    }
+</style>
+
+<body>
+    <label id="txt-count">0</label>
+    <br>
+    <button id="btn-reset">RESET</button>
+    <button id="btn-increase">INCREASE</button>
+    <button id="btn-decrease">DECREASE</button>
+</body>
+
+<script>
+    const txtCount = document.querySelector("#txt-count")
+    const btnReset = document.querySelector("#btn-reset")
+    const btnIncrease = document.querySelector("#btn-increase")
+    const btnDecrease = document.querySelector("#btn-decrease")
+
+    let count = txtCount.textContent
+    
+    btnDecrease.addEventListener("click", function(){
+        txtCount.textContent = count--
+        })
+
+    btnIncrease.addEventListener("click", function(){
+        txtCount.textContent = count++
+        })
+
+    btnReset.addEventListener("click", function(){
+        txtCount.textContent = count = 0;
+        })
+
+
+
+</script>
+</html>
